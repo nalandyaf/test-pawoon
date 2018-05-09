@@ -1,0 +1,136 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+apply plugin: 'me.tatarka.retrolambda'
+
+def versionMajor = 0
+def versionMinor = 0
+def versionPatch = 0
+def versionBuild = 1
+def versionString = "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
+
+project.ext.set "archivesBaseName", "project-base-" + versionString
+
+
+android {
+    flavorDimensions "default"
+    def varExt = rootProject.extensions.getByName("ext")
+    compileSdkVersion varExt["androidCompileSdkVersion"]
+    defaultConfig {
+        applicationId "com.work.nalandya.pawoon_test"
+        minSdkVersion varExt["androidMinSdkVersion"]
+        targetSdkVersion varExt["androidTargetSdkVersion"]
+        versionCode varExt["androidVersionCode"]
+        versionName versionString
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+                arguments = ['resourcePackageName': android.defaultConfig.applicationId]
+            }
+        }
+        multiDexEnabled true
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        prod {
+            applicationId "com.project.base"
+            buildConfigField "String", "URL_BASE", varExt["urlprod"]
+        }
+        dev {
+            applicationId "com.project.base.dev"
+            buildConfigField "String", "URL_BASE", varExt["urldev"]
+        }
+        local {
+            applicationId "com.project.base.local"
+            buildConfigField "String", "URL_BASE", varExt["urllocal"]
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        main {
+            res.srcDirs = [
+                    'src/main/res/',
+                    'src/main/res/layout/',
+                    'src/main/res/layout/activity',
+                    'src/main/res/layout/activity/layout',
+                    'src/main/res/layout/activity/layout/drawer',
+                    'src/main/res/layout/other',
+                    'src/main/res/layout/adapter',
+                    'src/main/res/layout/custom',
+                    'src/main/res/layout/custom/layout',
+                    'src/main/res/layout/custom/layout/spinner',
+                    'src/main/res/layout/content',
+                    'src/main/res/layout/dialog',
+                    'src/main/res/layout/fragment'
+            ]
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/',
+                    'src/main/res/layout/',
+                    'src/main/res/layout/activity/layout/login',
+                    'src/main/res/layout/activity/layout/drawer',
+                    'src/main/res/layout/activity/layout/menu',
+                    'src/main/res/layout/activity/layout/register',
+                    'src/main/res/layout/activity/layout',
+                    'src/main/res/layout/activity',
+                    'src/main/res/layout/other',
+                    'src/main/res/layout/adapter',
+                    'src/main/res/layout/content/layout/intro',
+                    'src/main/res/layout/content/layout',
+                    'src/main/res/layout/content',
+                    'src/main/res/layout/dialog',
+                    'src/main/res/layout/custom',
+                    'src/main/res/layout/custom/layout',
+                    'src/main/res/layout/custom/layout/spinner',
+                    'src/main/res/layout/fragment',
+            ]
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+}
+
+dependencies {
+    def app = rootProject.ext.appDependencies
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation app.values()
+    implementation(app.crashlytics) {
+        transitive = true
+    }
+    annotationProcessor rootProject.ext.annotation.androidAnnotation
+    compileOnly rootProject.ext.lombokDependencies.lombok
+    annotationProcessor rootProject.ext.lombokDependencies.lombok
+}

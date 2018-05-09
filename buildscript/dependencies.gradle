@@ -1,0 +1,135 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //URL
+    urldev = "\"​http://jsonplaceholder.typicode.com/\""
+    urlprod = "\"​http://jsonplaceholder.typicode.com/\""
+    urllocal = "\"​http://jsonplaceholder.typicode.com/\""
+
+    //Android
+    androidVersionCode = 2
+    androidBuildToolsVersion = "27.0.2"
+    androidMinSdkVersion = 14
+    androidTargetSdkVersion = 27
+    androidCompileSdkVersion = 27
+
+    //Android Libraries
+    appcompat = '27.0.2'
+    cardview = '27.0.2'
+    recyclerViewVersion = '27.0.2'
+    androidAnnotationsVersion = '27.0.2'
+    support = '27.0.2'
+    design = '27.0.2'
+    bottomBar = '2.1.0'
+    constraint = '1.0.2'
+
+    firebase = '11.2.0'
+    mapUtils = '0.5'
+    maps = '11.2.0'
+    places = '11.2.0'
+    location = '11.2.0'
+    vision = '11.2.0'
+
+    picasso = '2.5.2'                    // https://github.com/square/picasso
+    saripaar = '2.0.3'                   // https://github.com/ragunathjawahar/android-saripaar
+    crashlytics = '2.9.0@aar'            //
+    okHttp = '3.8.0'
+    gson = '2.2.4'
+    transformer = '1.2'
+    retrofit = '2.3.0'
+    aa = '4.4.0'
+    lombok = '1.16.20'
+    rxJavaVersion = '2.0.2'
+    rxAndroidVersion = '2.0.1'
+    rxAdapter = '2.0.2'
+    retrofitAdd = "2.2.0"
+    mDex = "1.0.0"
+    bSlider = "1.1.5@aar"
+    nineolVersion = "2.4.0"
+    edmodoV = "2.5.1"
+    circleV = "2.1.0"
+    stetho = "1.3.0"
+    stethoRealm = "0.8.0"
+
+    //Development
+    leakCanaryVersion = '1.3.1'
+
+    annotation = [
+            androidAnnotation: "org.androidannotations:androidannotations:${aa}"
+    ]
+
+    lombokDependencies = [
+            lombok: "org.projectlombok:lombok:${lombok}"
+    ]
+
+    appDependencies = [
+            constraintLayout   : "com.android.support.constraint:constraint-layout:${constraint}",
+            androidAA          : "org.androidannotations:androidannotations-api:${aa}",
+            appcompat          : "com.android.support:appcompat-v7:${appcompat}",
+            cardview           : "com.android.support:cardview-v7:${cardview}",
+            recyclerView       : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+            support            : "com.android.support:support-v4:${support}",
+            design             : "com.android.support:design:${design}",
+            bottomBar          : "com.aurelhubert:ahbottomnavigation:${bottomBar}",
+            picasso            : "com.squareup.picasso:picasso:${picasso}",
+            saripaar           : "com.mobsandgeeks:android-saripaar:${saripaar}",
+            crashlytics        : "com.crashlytics.sdk.android:crashlytics:${crashlytics}",
+            firebaseCore       : "com.google.firebase:firebase-core:${firebase}",
+            firebaseMessaging  : "com.google.firebase:firebase-messaging:${firebase}",
+            mapUtils           : "com.google.maps.android:android-maps-utils:${mapUtils}",
+            maps               : "com.google.android.gms:play-services-maps:${maps}",
+            places             : "com.google.android.gms:play-services-places:${places}",
+            location           : "com.google.android.gms:play-services-location:${location}",
+            vision             : "com.google.android.gms:play-services-vision:${vision}",
+            firebaseauth       : "com.google.firebase:firebase-auth:${firebase}",
+            auth               : "com.google.android.gms:play-services-auth:${firebase}",
+            rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            multidex           : "com.android.support:multidex:${mDex}",
+            bannerSlider       : "com.daimajia.slider:library:${bSlider}",
+            nineol             : "com.nineoldandroids:library:${nineolVersion}",
+            androidAnnotations : "com.android.support:support-annotations:${androidAnnotationsVersion}",
+            okHttp             : "com.squareup.okhttp3:okhttp:${okHttp}",
+            gson               : "com.google.code.gson:gson:${gson}",
+            transformer        : "com.mobandme:android-transformer:${transformer}",
+            transformerCompiler: "com.mobandme:android-transformer-compiler:${transformer}",
+            retrofit           : "com.squareup.retrofit2:retrofit:${retrofit}",
+            gsonRetrofit       : "com.squareup.retrofit2:converter-gson:${retrofitAdd}",
+            rxRetrofit         : "com.squareup.retrofit2:adapter-rxjava2:${retrofitAdd}",
+            edmodo             : "com.theartofdev.edmodo:android-image-cropper:${edmodoV}",
+            circle             : "de.hdodenhof:circleimageview:${circleV}",
+            rxJavaAdapter      : "com.squareup.retrofit2:adapter-rxjava:${rxAdapter}",
+            stetho             : "com.facebook.stetho:stetho:${stetho}",
+            stethoRealm        : "com.uphyca:stetho_realm:${stethoRealm}"
+    ]
+
+    domainDependencies = [
+            androidAA: "org.androidannotations:androidannotations-api:${aa}",
+            appcompat: "com.android.support:appcompat-v7:${appcompat}",
+            rxJava   : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            gson     : "com.google.code.gson:gson:${gson}",
+            multidex : "com.android.support:multidex:${mDex}"
+    ]
+
+    dataDependencies = [
+            multidex           : "com.android.support:multidex:${mDex}",
+            androidAA          : "org.androidannotations:androidannotations-api:${aa}",
+            support            : "com.android.support:support-v4:${support}",
+            androidAnnotations : "com.android.support:support-annotations:${androidAnnotationsVersion}",
+            okHttp             : "com.squareup.okhttp3:okhttp:${okHttp}",
+            gson               : "com.google.code.gson:gson:${gson}",
+            transformer        : "com.mobandme:android-transformer:${transformer}",
+            transformerCompiler: "com.mobandme:android-transformer-compiler:${transformer}",
+            retrofit           : "com.squareup.retrofit2:retrofit:${retrofit}",
+            rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            gsonRetrofit       : "com.squareup.retrofit2:converter-gson:${retrofitAdd}",
+            rxRetrofit         : "com.squareup.retrofit2:adapter-rxjava2:${retrofitAdd}"
+
+    ]
+}

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Test Pawoon</string>
+    <string name="error_permission_get_account">Get Accounts permission needed. Please allow in App Settings for additional functionality.</string>
+    <string name="crop">Potong</string>
+    <string name="home">Menu Utama</string>
+    <string name="action_settings">Pengaturan</string>
+    <string name="try_again">Coba Lagi</string>
+    <string name="login_again">Login Lagi</string>
+    <string name="expired_session">Sesi anda telah habis, Silahkan login kembali</string>
+    <string name="conflict_session">Anda telah login di device lain. Silahkan login kembali untuk masuk</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="prompt_exit">Apakah anda yakin ingin keluar dari aplikasi?</string>
+    <string name="prompt_image">Apakah anda yakin ingin menghapus gambar ini?</string>
+    <string name="yes">YA</string>
+    <string name="no">TIDAK</string>
+    <string name="content_progress">Mohon tunggu…</string>
+    <string name="todo_list">TODO LIST</string>
+    <string name="masukkan_kata">Masukkan Kata</string>
+    <string name="check_palindrome">Check Palindrome</string>
+    <string name="hasil_compile">Hasil Compile</string>
+</resources>

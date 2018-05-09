@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/camera_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:id="@+id/camera_preview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+
+        <Button
+            android:id="@+id/exit"
+            style="@style/button_green_circle_ml"
+            android:layout_width="@dimen/button_green_circle_size_small"
+            android:layout_height="@dimen/button_green_circle_size_small"
+            android:layout_gravity="top|center|left"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="x" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <com.theartofdev.edmodo.cropper.CropImageView
+                android:id="@+id/image_show"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"></com.theartofdev.edmodo.cropper.CropImageView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/close"
+            style="@style/button_green_circle_ml"
+            android:layout_width="@dimen/button_green_circle_size_small"
+            android:layout_height="@dimen/button_green_circle_size_small"
+            android:layout_gravity="top|center|left"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="x" />
+
+
+        <Button
+            android:id="@+id/crop"
+            style="@style/button_green_rounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="@string/crop" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="bottom"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ToggleButton
+                    android:id="@+id/flash"
+                    android:layout_width="@dimen/button_green_circle_size_small"
+                    android:layout_height="@dimen/button_green_circle_size_small"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/custom_flash"
+                    android:checked="true"
+                    android:textOff=" "
+                    android:textOn=" " />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/capture"
+                    android:layout_width="@dimen/button_green_circle_size"
+                    android:layout_height="@dimen/button_green_circle_size"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/custom_shutter" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/galery"
+                    android:layout_width="@dimen/button_green_circle_size_small"
+                    android:layout_height="@dimen/button_green_circle_size_small"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:paddingTop="200dp"
+                    android:background="@drawable/custom_gallery"
+                    android:gravity="right" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

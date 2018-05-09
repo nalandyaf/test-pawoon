@@ -1,0 +1,50 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">12dp</dimen>
+    <dimen name="activity_vertical_margin">12dp</dimen>
+
+    <!--Margin-->
+    <dimen name="margin_xvhigh">90dp</dimen>
+    <dimen name="margin_vhigh">60dp</dimen>
+    <dimen name="margin_high">45dp</dimen>
+    <dimen name="margin_hvmed">30dp</dimen>
+    <dimen name="margin_hmed">22.5dp</dimen>
+    <dimen name="margin_hm">18.75dp</dimen>
+    <dimen name="margin_med">15dp</dimen>
+    <dimen name="margin_smed">7.5dp</dimen>
+    <dimen name="margin_small">3.75dp</dimen>
+
+    <!--Padding-->
+    <dimen name="padding_large">45dp</dimen>
+    <dimen name="padding_slarge">15dp</dimen>
+    <dimen name="padding_small">7.5dp</dimen>
+    <dimen name="padding_xmsmall">6dp</dimen>
+    <dimen name="padding_xsmall">3.75dp</dimen>
+    <dimen name="padding_xxsmall">2.25dp</dimen>
+
+    <!--Text Size-->
+    <dimen name="text_vxxl">54dp</dimen>
+    <dimen name="text_xxl">37.5dp</dimen>
+    <dimen name="text_xl">24dp</dimen>
+    <dimen name="text_ml">15dp</dimen>
+    <dimen name="text_mls">13.5dp</dimen>
+    <dimen name="text_m">12dp</dimen>
+    <dimen name="text_sm">10.5dp</dimen>
+    <dimen name="text_s">9dp</dimen>
+    <dimen name="text_xms">7.5dp</dimen>
+    <dimen name="text_xs">6dp</dimen>
+
+    <!--Custom Background Size-->
+    <dimen name="radius_xxsmall">2.25dp</dimen>
+    <dimen name="radius_xsmall">3.75dp</dimen>
+    <dimen name="radius_small">7.5dp</dimen>
+    <dimen name="radius_smedium">15dp</dimen>
+    <dimen name="radius_medium">30dp</dimen>
+    <dimen name="radius_high">45dp</dimen>
+    <dimen name="stroke_small">0.75dp</dimen>
+    <dimen name="stroke_medium">1.5dp</dimen>
+    <dimen name="button_green_circle_size">45dp</dimen>
+    <dimen name="button_green_circle_size_small">22.5dp</dimen>
+    <dimen name="button_custom_height">30dp</dimen>
+
+</resources>
